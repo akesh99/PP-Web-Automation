@@ -70,7 +70,7 @@ import { Addpayee } from '../../pages/addpayee';
   // test('TC05:Succesfull fund transaction recipt', async ({ page }) => {
   //   test.setTimeout(60000);
   //   const loginPage=new LoginPage(page);
-    
+
   //   const fundtransfer=new Fundtransfer(page);
   //   await loginPage.gotologin();
   //   await loginPage.login();
@@ -233,7 +233,27 @@ import { Addpayee } from '../../pages/addpayee';
     
   // });
 
-    test('TC10: Add Mobile payee', async ({ page }) => {
+  //   test('TC10: Add Mobile payee', async ({ page }) => {
+  //   test.setTimeout(60000);
+  //   const loginPage=new LoginPage(page);
+  //   const accountpayee=new Addpayee(page);
+    
+  //   await loginPage.gotologin();
+  //   await loginPage.login();
+  //   await page.locator('text=Hello').waitFor();
+  //   const currentURL = page.url();
+  //   await expect(currentURL).toContain('/dashboard');
+
+  //   await accountpayee.add_mobilepayee();
+  //   await expect(page.getByLabel('Your request is successfully')).toContainText("Mobile Payee successfully added");
+  //   await accountpayee.ok();
+  //   await accountpayee.home();
+  //   // await page.pause();
+
+    
+  // });
+
+  test('TC11: Add Biller', async ({ page }) => {
     test.setTimeout(60000);
     const loginPage=new LoginPage(page);
     const accountpayee=new Addpayee(page);
@@ -244,8 +264,8 @@ import { Addpayee } from '../../pages/addpayee';
     const currentURL = page.url();
     await expect(currentURL).toContain('/dashboard');
 
-    await accountpayee.add_mobilepayee();
-    await expect(page.getByLabel('Your request is successfully')).toContainText("Mobile Payee successfully added");
+    await accountpayee.add_biller();
+    await expect(page.getByLabel('Your request is successfully')).toContainText("biller successfully added");
     await accountpayee.ok();
     await accountpayee.home();
     // await page.pause();

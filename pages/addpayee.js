@@ -59,7 +59,7 @@ export class Addpayee{
     await this.page.getByRole('button', { name: 'Service Providers' }).click();
     await this.page.getByRole('option', { name: 'Dialog', exact: true }).locator('div').nth(1).click();
     await this.page.getByRole('textbox').first().click();
-    await this.page.getByRole('textbox').first().fill('785268945');
+    await this.page.getByRole('textbox').first().fill(mobileNumber);
     await this.page.getByRole('textbox', { name: 'Enter Name' }).click();
     await this.page.getByRole('textbox', { name: 'Enter Name' }).fill(this.nick_name);
     await this.page.getByRole('textbox', { name: 'Enter Nick Name' }).click();
@@ -70,4 +70,24 @@ export class Addpayee{
     await this.page.getByRole('button', { name: 'Confirm' }).click();
     
         }
+    async add_biller(){
+    const billNumber=this.generateRandomMobileNumber();
+    await this.page.getByRole('button', { name: 'btn_icon Favorites' }).click();
+    await this.page.getByRole('button', { name: 'btn_icon Billers' }).click();
+    await this.page.getByRole('button', { name: 'Add Biller' }).click();
+    await this.page.getByRole('tab', { name: 'Telecommunication' }).click();
+    await this.page.getByRole('button', { name: 'Select' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter Account Number' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter Account Number' }).fill(billNumber);
+    await this.page.getByRole('textbox', { name: 'Name', exact: true }).click();
+    await this.page.getByRole('textbox', { name: 'Name', exact: true }).fill(this.nick_name);
+    await this.page.getByRole('textbox', { name: 'Nickname' }).click();
+    await this.page.getByRole('textbox', { name: 'Nickname' }).fill(this.nick_name);
+    await this.page.getByRole('switch', { name: 'Payment Reminder' }).check();
+    await this.page.getByRole('button', { name: 'Next' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter Login Password' }).click();
+    await this.page.getByRole('textbox', { name: 'Enter Login Password' }).fill(this.login_password);
+    await this.page.getByRole('button', { name: 'Confirm' }).click();
+    }
+
 }

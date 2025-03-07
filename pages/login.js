@@ -17,7 +17,7 @@ exports.LoginPage =class LoginPage{
     bank="People's bank";
     
     async gotologin(){
-        await this.page.goto('https://paymerchantuat.peoplesbank.lk/signin');
+        await this.page.goto('https://paymerchantsit.peoplesbank.lk/signin');
     }
     async login(){
         await this.username_field.fill(this.username);
